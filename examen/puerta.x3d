@@ -1,0 +1,43 @@
+<X3D>
+  <Scene>
+    <Transform DEF='abrePuerta'>
+<!-- Bisagra  -->
+      <Shape>
+        <Appearance>
+          <Material/>
+        </Appearance>
+        <Cylinder height='1.9' radius='0.01'/>
+      </Shape>
+
+<!-- Pomo  -->
+      <Transform rotation='1 0 0 1.5708' translation='0.7 0 0'>
+        <Shape>
+          <Appearance>
+            <ImageTexture url='texturas/aluminio.jpg'/>
+          </Appearance>
+          <Cylinder height='0.16' radius='0.05'/>
+        </Shape>
+      </Transform>
+
+<!-- Puerta      -->
+      <Transform translation='0.4 0 0'>
+        <Shape>
+          <Appearance>
+            <ImageTexture url='texturas/lobo2.png'/>
+          </Appearance>
+          <Box size='0.8 1.9 0.05'/>
+        </Shape>
+      </Transform>
+
+<!-- Tiempo y giro        -->
+      <TimeSensor DEF='timer' cycleInterval='20' startTime='-1'/>
+      <TouchSensor DEF='Toque'/>
+      <OrientationInterpolator DEF='giro' key='0 0.25 1' keyValue='0 1 0 0 0 1 0 2 0 1 0 0'/>
+    </Transform>
+<!-- Animación  -->
+    <ROUTE fromNode='giro' fromField='value_changed' toNode='abrePuerta' toField='set_rotation'/>
+    <ROUTE fromNode='timer' fromField='fraction_changed' toNode='giro' toField='set_fraction'/>
+    <ROUTE fromNode='Toque' fromField='touchTime' toNode='timer' toField='set_startTime'/>
+    
+  </Scene>
+</X3D>
