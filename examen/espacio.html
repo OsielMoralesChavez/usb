@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Espacio</title>
+		<link rel="shortcut icon" href="./img/logo.ico">
+        <link rel="stylesheet" href="./css/bootstrap.min.css">
+        <link rel="stylesheet" href="./css/styl.css">
+		<script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'></script> 
+		<link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'>
+		<link rel="stylesheet" href="css/estilos.css">
+	</head>
+	<body>
+
+		<header class="header">
+			<div class="container">
+			  <nav class="navbar navbar-expand-lg navbar-dark">
+				<div class="container-fluid">
+				  <!--Logo-->
+				  <a class="navbar-brand" href="#">      
+					  <img src="./img/logo.png" alt="black design" class="img-logo">
+				  </a>
+				  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				  </button>
+				  <div class="collapse navbar-collapse col-auto" id="navbarSupportedContent">
+					<ul class="navbar-nav ms-auto">
+					  <li class="nav-item">
+						<a class="nav-link active pr-3" aria-current="page" href="index.html">Inicio</a>
+					  </li>
+					  <li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle active pr-3" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="#">Experiencia</a>
+							<ul class="dropdown-menu">
+								<li><a class="dropdown-item" href="atomo.html">Atomo</a></li>
+								<li><a class="dropdown-item" href="espacio.html">Espacio</a></li>
+								<li><a class="dropdown-item" href="tiburon.html">Modelo 3D 1</a></li>
+								<li><a class="dropdown-item" href="faro.html">Modelo 3D 2</a></li>
+							</ul>
+					  </li>
+					</ul>
+				  </div>
+				</div>
+			  </nav>
+					<!--Descripción-->
+					<div class="row">
+					  <div class="col-6 text-white">
+						<!--Titulo-->
+						<h1 class="text-capitalize">BLACK DESIGN <br>
+						   <span class="text-warning h2">SOLUTION</span></h1>
+						<p>
+						  Desarrollamos soluciones de TI en todo México, utilizando las mejores tecnologías del mercado para lograr una transformación digital segura y eficiente.
+						</p>
+					</div>
+			</div>
+		
+		  </header>
+
+		<section class="container">
+			<x3d>
+				<scene>
+					<inline url="./archivos/puerta.x3d"></inline>
+					<transform rotation="1 0 0 -1.57" translation="0 -1 0">
+						<shape>
+							<appearance>
+								<ImageTexture url='texturas/lobo.png'></ImageTexture>
+							</appearance>
+							<plane siza="4, 4"></plane>
+						</shape>
+					</transform>
+				</scene>
+			</x3d>
+		</section>
+  <script src="./js/bootstrap.bundle.min.js"></script>
+  <script src="./js/bootstrap.min.js"></script>
+	</body>
+</html>
