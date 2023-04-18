@@ -1,7 +1,0 @@
-body{
-    margin: auto;
-    /*background-color: black;*/
-    background-image:url("../texturas/espacio.jpg");
-    background-size: contain; /*Se asegurará de que toda la imagen se muestre en el fondo sin recortar nada.*/
-
-   };
