@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Atomo</title>
+        <link rel="shortcut icon" href="./img/logo.ico">
+        <link rel="stylesheet" href="./css/bootstrap.min.css">
+        <link rel="stylesheet" href="./css/styl.css">
+		<script type='text/javascript' src='https:/www.x3dom.org/download/x3dom.js'></script> 
+		<link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'>
+        <link rel="stylesheet" href="css/estilos.css">
+	</head>
+	<body>
+        <header class="header">
+            <div class="container">
+              <nav class="navbar navbar-expand-lg navbar-dark">
+                <div class="container-fluid">
+                  <!--Logo-->
+                  <a class="navbar-brand" href="#">      
+                      <img src="./img/logo.png" alt="black design" class="img-logo">
+                  </a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse col-auto" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto">
+                      <li class="nav-item">
+                        <a class="nav-link active pr-3" aria-current="page" href="index.html">Inicio</a>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active pr-3" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="#">Experiencia</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="atomo.html">Atomo</a></li>
+                                <li><a class="dropdown-item" href="espacio.html">Espacio</a></li>
+                                <li><a class="dropdown-item" href="tiburon.html">Modelo 3D 1</a></li>
+                                <li><a class="dropdown-item" href="faro.html">Modelo 3D 2</a></li>
+                            </ul>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+                    <!--Descripción-->
+                    <div class="row">
+                      <div class="col-6 text-white">
+                        <!--Titulo-->
+                        <h1 class="text-capitalize">BLACK DESIGN <br>
+                           <span class="text-warning h2">SOLUTION</span></h1>
+                        <p>
+                          Desarrollamos soluciones de TI en todo México, utilizando las mejores tecnologías del mercado para lograr una transformación digital segura y eficiente.
+                        </p>
+                    </div>
+            </div>
+        
+          </header>
+
+        <section class="container">
+            <div class="row">
+
+                <div class="col-12 text-center">
+                    <h2 class="text-warning text uppercase h3">Modelo Atomico del Oxigeno</h2>
+                  </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <x3d>
+                        <scene>
+                            <transform DEF='Centro' rotation='1 0 1 -0.4'>
+        
+                                <!--Sol-->
+                                <Inline url='atomo1.x3d'></Inline>
+        
+                                <!--primer orbita-->
+                                <transform translation="2 0 -1" scale="0.15 0.15 0.15">
+                                    <Inline url='electron.x3d'></Inline>
+                                </transform>
+        
+                                <transform translation="-2 0 1" scale="0.15 0.15 0.15">
+                                    <Inline url='electron.x3d'></Inline>
+                                </transform>
+                            
+        
+                                <!--Segunda orbita-->
+                                <transform translation="-3 0 -1" scale="0.15 0.15 0.15">
+                                    <Inline url='electron.x3d'></Inline>
+                                </transform>
+        
+                                <transform translation="-3 0 1" scale="0.15 0.15 0.15">
+                                    <Inline url='electron.x3d'></Inline>
+                                </transform>
+                                
+                                <transform translation="3 0 -1" scale="0.15 0.15 0.15">
+                                    <Inline url='electron.x3d'></Inline>
+                                </transform>
+        
+                                <transform translation="3 0 1" scale="0.15 0.15 0.15">
+                                    <Inline url='electron.x3d'></Inline>
+                                </transform>
+        
+                                <transform translation="-3 0 -0.5" scale="0.15 0.15 0.15">
+                                    <Inline url='electron.x3d'></Inline>
+                                </transform>
+        
+                                <transform translation="-3 0 0.5" scale="0.15 0.15 0.15">
+                                    <Inline url='electron.x3d'></Inline>
+                                </transform>
+        
+                                <transform translation="3 0 -0.5" scale="0.15 0.15 0.15">
+                                    <Inline url='electron.x3d''></Inline>
+                                </transform>
+        
+                                <transform translation="3 0 0.5" scale="0.15 0.15 0.15">
+                                    <Inline url='electron.x3d'></Inline>
+                                </transform>
+                                
+        
+                                <timeSensor DEF='timer' cycleInterval='15' loop='true'></timeSensor>
+                                <orientationInterpolator DEF='rotator' key='0 0.5 1' keyValue='0 1 0 0 0 1 0 3.14 0 1 0 6.28'>
+                                </orientationInterpolator>
+                            </transform>
+        
+                            <ROUTE fromNode='timer' fromField='fraction_changed' toNode='rotator' toField='set_fraction'></ROUTE>
+                            <ROUTE fromNode='rotator' fromField='value_changed' toNode='Centro' toField='set_rotation'></ROUTE>
+        
+                        </scene>
+                    </x3d>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 text-white">
+                    <p>
+                        El oxígeno es un elemento químico que se encuentra en el periodo 2 y en el grupo 16 de la tabla periódica. Su número atómico es 8, lo que significa que tiene 8 protones y 8 neutrones en su núcleo. Al ser un elemento neutro, esto significa también que tiene 8 electrones distribuidos en 3 capas.
+                    </p>
+                    
+                </div>
+            </div>
+           
+        </section>
+        <script src="./js/bootstrap.bundle.min.js"></script>
+        <script src="./js/bootstrap.min.js"></script>
+	</body>
+</html>
